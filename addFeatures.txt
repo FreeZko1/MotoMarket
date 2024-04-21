@@ -1,0 +1,108 @@
+1. Pokročilé Vyhledávání a Filtrace
+Vylepšené Filtry: Implementujte více možností filtrů, jako jsou typ paliva, typ karoserie, barva vozidla, převodovka atd. Toto může zahrnovat víceúrovňové dropdown menu nebo slider pro cenové rozpětí.
+Dynamické načítání výsledků: Použijte AJAX pro dynamické načítání výsledků bez nutnosti znovu načítat celou stránku.
+***2. Řízení Uživatelských Recenzí a Hodnocení
+***Přidání Sekce Recenzí: Umožněte uživatelům přidávat recenze na vozidla, což může zahrnovat textové komentáře a hodnocení pomocí hvězdiček.
+***Moderace Recenzí: Implementujte nástroje pro moderaci a správu recenzí, aby administrátoři mohli odstraňovat nevhodné komentáře.
+3. Sledování Historie Vozidla
+Servisní Historie: Umožněte prodejcům přidávat historii servisu a údržby vozidla, což může pomoci zvýšit důvěru kupujících.
+Přehled Předchozích Majitelů: Pokud je to legálně možné, zahrněte informace o počtu předchozích majitelů vozidla.
+4. Porovnání Vozidel
+Funkce Pro Porovnání: Umožněte uživatelům vybrat více vozidel a porovnat je vedle sebe podle různých kritérií, jako jsou výkon, cena, spotřeba paliva atd.
+5. Osobní Oblíbené a Sledování Inzerátů
+Wishlist / Oblíbené: Umožněte uživatelům přidávat vozidla do seznamu oblíbených, které si mohou kdykoliv prohlédnout.
+Upozornění na Změny: Implementujte systém upozornění, který informuje uživatele o změnách cen nebo stavu vozidel, které sledují.
+6. Mobilní Připravenost a Optimalizace
+Responzivní Design: Zajistěte, aby web byl plně responzivní a optimalizovaný pro různé typy zařízení, včetně mobilních telefonů a tabletů.
+Offline Přístup: Implementujte funkce, které umožní uživatelům prohlížet si určité obsahy offline, což může být užitečné pro mobilní aplikace.
+7. Bezpečnostní Vylepšení
+Ověření Autenticity Inzerátů: Zavedení pokročilých metod pro ověřování autenticity inzerátů a uživatelů, což může zahrnovat dvojfaktorovou autentizaci nebo ověření pomocí SMS.
+Šifrování dat: Zajistěte, že všechna citlivá data jsou šifrována, a to jak při přenosu, tak i v úložišti.
+Každé z těchto rozšíření může znamenat významný vývoj jak na frontendu, tak na backendu, včetně návrhu databáze, API a uživatelského rozhraní. Vyberte si prioritní funkce na základě potřeb vašich uživatelů a dostupných zdrojů.
+
+
+
+
+Pokročilé vyhledávací filtry:
+Přidejte více kritérií pro vyhledávání, jako je typ paliva, typ karoserie, výkon motoru, barva vozidla, atd.
+Možnost ukládání vyhledávacích filtrů pro rychlé opětovné použití.
+Porovnání vozidel:
+Umožněte uživatelům vybrat více vozidel a zobrazit je vedle sebe pro snadné porovnání jejich specifikací a cen.
+Systém hodnocení vozidel:
+Podobně jako recenze, ale umožněte uživatelům ohodnotit vozidla podle různých kritérií, jako jsou spolehlivost, spotřeba paliva, pohodlí, atd.
+Zobrazení průměrného hodnocení na stránce vozidla.
+Oblíbené položky:
+Umožněte uživatelům přidávat vozidla do seznamu oblíbených a snadno se k nim vracet.
+Rezervační systém:
+Integrovat možnost rezervovat vozidlo na testovací jízdu přes web.
+Mobilní aplikace:
+Vytvoření mobilní aplikace, která by zlepšila přístupnost a uživatelský zážitek na mobilních zařízeních.
+Integrace sociálních médií:
+Umožněte uživatelům sdílet vozidla na sociálních sítích.
+Přidání funkce komentářů k vozidlům, kde mohou uživatelé diskutovat.
+Uživatelské profily:
+Rozšíření profilů o další informace, možnost přidat profilovou fotografii, zobrazení historie prohlížení a aktivit.
+Administrátorské nástroje:
+Vytvoření robustnějšího administračního rozhraní pro správu vozidel, uživatelů, recenzí a dalších prvků na webu.
+Notifikace:
+Implementace systému upozornění pro uživatele, například když jsou vozidla z jejich oblíbeného seznamu snížena na cenu nebo když jsou k dispozici nová vozidla odpovídající jejich hledaným kritériím.
+
+
+
+
+
+kvíz
+
+
+po kliknuti v navigaci chci aby se otevrelo quiz.html a tam byly moje kvízy, asi jich bude víc. jakákoliv logika může být v quiz.py nebo v js
+
+
+
+Rozumím, chcete celkem 25 otázek pro každý z čtyř kvízů, které se týkají automobilového průmyslu. Toto je poměrně rozsáhlá práce, ale poskytnu vám nyní základní návrh pro každý kvíz s několika otázkami, které můžete dále rozšířit.
+
+1. Značky aut a jejich původ
+Otázky budou zkoumat, které automobilky pochází z jakých zemí.
+
+javascript
+Copy code
+const brandOriginQuestions = [
+    // Německo
+    { question: "Která země je domovem automobilky 'BMW'?", options: ["USA", "Německo", "Japonsko", "Itálie"], answer: 1 },
+    { question: "Kde byla založena automobilka 'Audi'?", options: ["Německo", "Čína", "Francie", "Jižní Korea"], answer: 0 },
+    // USA
+    { question: "Která země je domovem automobilky 'Ford'?", options: ["Německo", "Velká Británie", "USA", "Kanada"], answer: 2 },
+    { question: "Kde byla založena automobilka 'Chevrolet'?", options: ["USA", "Rusko", "Německo", "Austrálie"], answer: 0 },
+    // Japonsko
+    { question: "Která země je domovem automobilky 'Nissan'?", options: ["Čína", "USA", "Japonsko", "Austrálie"], answer: 2 },
+    { question: "Kde byla založena automobilka 'Toyota'?", options: ["Kanada", "Japonsko", "Německo", "Itálie"], answer: 1 },
+    // Další
+    // Tento seznam můžete rozšířit až na 25 otázek podle vzoru
+];
+2. Historie motorsportu
+Otázky se zaměří na historické milníky a významné postavy v motorsportu.
+
+javascript
+Copy code
+const motorsportHistoryQuestions = [
+    { question: "Který závod je považován za jeden z nejstarších v motorsportu?", options: ["Indy 500", "Le Mans", "Monte Carlo Rally", "Isle of Man TT"], answer: 3 },
+    { question: "Kdo získal titul mistra světa ve Formuli 1 v roce 1950?", options: ["Juan Manuel Fangio", "Alberto Ascari", "Nino Farina", "Stirling Moss"], answer: 2 },
+    { question: "Která automobilka dominovala rallye v 80. letech?", options: ["Lancia", "Ford", "Peugeot", "Audi"], answer: 0 },
+    // Další
+    // Tento seznam můžete rozšířit až na 25 otázek podle vzoru
+];
+3. Typy automobilů
+Otázky budou klasifikovat různé typy vozidel a jejich charakteristiky.
+
+javascript
+Copy code
+const carTypesQuestions = [
+    { question: "Co označuje termín 'sedan'?", options: ["Kupé", "Sportovní vůz", "Vozidlo se čtyřmi dveřmi", "Vozidlo s otevřenou střechou"], answer: 2 },
+    { question: "Jaký typ vozu je 'convertible'?", options: ["Vozidlo s pevnou střechou", "Vozidlo s otevřenou střechou", "Vozidlo s pohonem všech kol", "Hybridní vozidlo"], answer: 1 },
+    { question: "Co je charakteristické pro vozidla typu 'hatchback'?", options: ["Dveře kufru se otevírají nahoru", "Pouze dvě dveře", "Velká nákladová kapacita", "Vysoký
+
+2 / 2
+
+
+
+
+

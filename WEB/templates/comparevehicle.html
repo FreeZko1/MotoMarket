@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porovnání vozidel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .compare-table th, .compare-table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Porovnání vozidel</h2>
+        <div class="modal fade" id="vehicleSelectModal" tabindex="-1" role="dialog" aria-labelledby="vehicleSelectModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="vehicleSelectModalLabel">Vyberte vozidla k porovnání</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="vehicleSelectionContainer" class="row">
+                            {% for vehicle in vehicles %}
+                            <div class="col-md-4">
+                                <div class="card mb-3">
+                                    <img class="card-img-top" src="{{ url_for('compare.vehicle_image', vehicle_id=vehicle.VehicleID) }}" alt="{{ vehicle.Brand }} {{ vehicle.Model }}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ vehicle.Brand }} {{ vehicle.Model }}</h5>
+                                        <p class="card-text">{{ vehicle.YearOfManufacture }} - {{ vehicle.Mileage }} km</p>
+                                        <button class="btn btn-primary" onclick="selectVehicle('{{ vehicle.VehicleID }}')">Vybrat</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vehicleSelectModal">
+            Vybrat vozidla k porovnání
+        </button>
+
+        <form id="compareForm" method="get" action="{{ url_for('compare.compare_selected_vehicles') }}">
+            <button type="submit" class="btn btn-primary">Porovnat</button>
+        </form>
+        
+
+        <table class="table table-bordered compare-table mt-4">
+            <thead>
+                
+                <tr>
+                    <th>Vlastnost</th>
+                    <th>Vozidlo 1</th>
+                    <th>Vozidlo 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Značka</td>
+                    <td id="brand1"></td>
+                    <td id="brand2"></td>
+                </tr>
+                <tr>
+                    <td>Model</td>
+                    <td id="model1"></td>
+                    <td id="model2"></td>
+                </tr>
+                <tr>
+                    <td>Rok výroby</td>
+                    <td id="year1"></td>
+                    <td id="year2"></td>
+                </tr>
+                <tr>
+                    <td>Najeto km</td>
+                    <td id="mileage1"></td>
+                    <td id="mileage2"></td>
+                </tr>
+                <tr>
+                    <td>Cena</td>
+                    <td id="price1"></td>
+                    <td id="price2"></td>
+                </tr>
+                <!-- Další vlastnosti -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- jQuery a Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+    <!-- Váš vlastní JavaScript -->
+    <script src="{{ url_for('static', filename='comparevehicles.js') }}"></script>
+</body>
+</html>

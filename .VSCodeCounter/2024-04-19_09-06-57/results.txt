@@ -1,0 +1,47 @@
+Date : 2024-04-19 09:06:57
+Directory : c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB
+Total : 18 files,  1724 codes, 77 comments, 276 blanks, all 2077 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| HTML       |          7 |        883 |         32 |         64 |        979 |
+| Python     |         10 |        766 |         40 |        201 |      1,007 |
+| JavaScript |          1 |         75 |          5 |         11 |         91 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                    |         18 |      1,724 |         77 |        276 |      2,077 |
+| . (Files)                                                                            |         10 |        766 |         40 |        201 |      1,007 |
+| static                                                                               |          1 |         75 |          5 |         11 |         91 |
+| templates                                                                            |          7 |        883 |         32 |         64 |        979 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                             | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\__init__.py                   | Python     |         18 |          0 |         14 |         32 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\adminfeatures.py              | Python     |         46 |          5 |          4 |         55 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\auth.py                       | Python     |        149 |         11 |         43 |        203 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\chat.py                       | Python     |         38 |          1 |          8 |         47 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\compare_vehicles.py           | Python     |         43 |          0 |         14 |         57 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\news.py                       | Python     |         81 |          8 |         18 |        107 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\sales.py                      | Python     |         72 |          0 |          9 |         81 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\search.py                     | Python     |         57 |          0 |         10 |         67 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\static\scripts.js             | JavaScript |         75 |          5 |         11 |         91 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\templates\chat.html           | HTML       |          0 |          0 |          1 |          1 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\templates\comparevehicle.html | HTML       |        147 |          4 |          8 |        159 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\templates\login.html          | HTML       |         59 |          3 |          3 |         65 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\templates\page.html           | HTML       |        260 |          8 |         14 |        282 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\templates\profile.html        | HTML       |        137 |          6 |         13 |        156 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\templates\registration.html   | HTML       |        110 |          3 |         12 |        125 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\templates\specvehicle.html    | HTML       |        170 |          8 |         13 |        191 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\user_profiles.py              | Python     |         55 |          3 |         21 |         79 |
+| c:\Users\vmlad\Downloads\OMEGA-Hustle\OMEGA-Hustle\WEB\vehicles.py                   | Python     |        207 |         12 |         60 |        279 |
+| Total                                                                                |            |      1,724 |         77 |        276 |      2,077 |
++--------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

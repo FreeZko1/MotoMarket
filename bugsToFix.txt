@@ -1,0 +1,56 @@
+
+
+dodelat admina, zatim muze pouze mazat vsechna vozidla
+
+admin bude mit moznost zobrazit si formular, nefunguje zapis do jsonu
+
+
+OMEGA-HUSTLE
+│
+├── DB
+│   ├── database_connection.py
+│   └── dbScripts
+│       └── 01.sql
+│
+├── WEB
+│   ├── __pycache__
+│   ├── images
+│   ├── static
+│   │    ├── chat.js
+│   │    ├── comparevehicles.js
+│   │    ├── quiz.js
+│   │    ├── registration.js
+│   │    ├── scripts.js
+│   │    └── specvehicle.js
+│   ├─── templates
+│   │       ├── chat.html
+│   │       ├── comparevehicle.html
+│   │       ├── login.html
+│   │       ├── page.html
+│   │       ├── profile.html
+│   │       ├── quiz.html
+│   │       ├── registration.html
+│   │       └── specvehicle.html
+│   ├── __init__.py
+│   ├── adminfeatures.py
+│   ├── auth.py
+│   ├── chat.py
+│   ├── compare_vehicles.py
+│   ├── news.py
+│   ├── quiz.py
+│   ├── sales.py
+│   ├── search.py
+│   ├── staffform.json
+│   ├── user_profiles.py
+│   └── vehicles.py
+│
+├── app.py
+├── addFeatures.txt
+└── bugsToFix.txt
+
+
+
+
+dodelat porovnani vozidel + unit testy
+
+to same pro sales

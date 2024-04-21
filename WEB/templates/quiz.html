@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kvíz</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-custom { background-color: #007bff; }
+        .card-custom { margin-top: 20px; }
+        .correct-answer { background-color: #28a745; /* Zelená */ }
+        .wrong-answer { background-color: #dc3545; /* Červená */ }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="/">MotoMarket</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/profile">Můj profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/vehicles">Porovnávač vozidel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/chat">Chat</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="/quiz">Dej si kvíz</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="mb-3">Vítejte v sekci kvízů!</h1>
+        <div class="row" id="quiz-list"></div> <!-- Kontejner pro kvízy -->
+    </div>
+
+    <!-- Modální okno pro kvíz -->
+    <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quizModalLabel">Název Kvízu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="quiz-container"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zavřít</button>
+                    <button id="next-btn" class="btn btn-primary" style="display: none;">Další otázka</button>
+                    <button id="finish-btn" class="btn btn-success" style="display:block;">Ukončit kvíz</button> <!-- Tlačítko vždy viditelné -->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+</body>
+</html>

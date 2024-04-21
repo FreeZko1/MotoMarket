@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail vozidla</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-custom { background-color: #007bff; }
+        .container { margin-top: 20px; }
+        .vehicle-img { width: 300px; height: 200px; object-fit: cover; }
+        .modal-content { max-width: 500px; margin: auto; }
+        .form-control, .btn { margin-bottom: 10px; }
+        .vehicle-details, .vehicle-reviews, .vehicle-options { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('auth.page') }}">MotoMarket</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="vehicle-details">
+                <h1>{{ vehicle.Brand }} {{ vehicle.Model }}</h1>
+                <p>Rok výroby: {{ vehicle.YearOfManufacture }}</p>
+                <p>Najeto: {{ vehicle.Mileage }} km</p>
+                <p>Cena: {{ vehicle.Price }} CZK</p>
+                <div class="owner-info">
+                    {% if vehicle.UserID %}
+                        <p>Prodejce: <a href="{{ url_for('user_profiles.profile', user_id=vehicle.UserID) }}">{{ vehicle.FirstName }} {{ vehicle.LastName }}</a></p>
+                    {% else %}
+                        <p>Neznámý uživatel</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="{{ url_for('vehicles.serve_image', vehicle_id=vehicle.VehicleID) }}" alt="Obrázek vozidla" class="vehicle-img">
+
+            <div class="vehicle-options">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactSellerModal">Kontaktovat prodejce</button>
+                {% if session['user_id'] == vehicle.UserID %}
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#addHistoryModal">Přidat záznam</button>
+                {% endif %}
+                <button class="btn btn-info" data-toggle="modal" data-target="#viewHistoryModal">Zobrazit historii</button>
+                
+                
+                
+                <p>Přihlášený uživatel: {{ session.get('user_id', 'Není přihlášen') }} | Role: {{ session.get('role', 'Není role') }}</p>
+                <p>Obsah role v session: '{{ session.get('role') }}'</p>
+
+                <!-- Zkontrolujeme a zobrazíme, proč se tlačítko nemusí zobrazovat -->
+                <p>Uživatel ID porovnání: {{ session.get('user_id') }} == {{ vehicle.UserID }} ? {{ session.get('user_id') == vehicle.UserID }}</p>
+                <p>Je uživatel admin? {{ session.get('role') == 'admin' }}</p>
+                
+                {% if session.get('user_id')|string == vehicle.UserID|string or session.get('role')|lower == 'admin' %}
+                <form action="{% if session.get('role') == 'admin' %}{{ url_for('admin.delete_vehicle', vehicle_id=vehicle.VehicleID) }}{% else %}{{ url_for('vehicles.delete_vehicle', vehicle_id=vehicle.VehicleID) }}{% endif %}" method="post" onsubmit="return confirm('Opravdu chcete smazat toto vozidlo?');">
+                    <button type="submit" class="btn btn-danger">Smazat</button>
+                </form>
+                
+                {% else %}
+                    <p>Tlačítko pro smazání není zobrazeno kvůli nesplnění podmínek.</p>
+                {% endif %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals for Contact Seller, Add History, and View History -->
+<div class="modal fade" id="contactSellerModal" tabindex="-1" role="dialog" aria-labelledby="contactSellerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactSellerModalLabel">Kontaktovat prodejce</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="contactSellerForm" onsubmit="sendMessage(); return false;">
+                    <textarea class="form-control" id="messageInput" placeholder="Vaše zpráva" required></textarea>
+                    <input type="hidden" id="senderId" value="{{ session['user_id'] }}">
+                    <input type="hidden" id="recipientId" value="{{ vehicle.UserID }}">
+                    <button type="submit" class="btn btn-primary">Odeslat zprávu</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addHistoryModal" tabindex="-1" role="dialog" aria-labelledby="addHistoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addHistoryModalLabel">Přidat historii vozidla</h5>
+                <button type="button" the close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ url_for('vehicles.add_vehicle_history', vehicle_id=vehicle.VehicleID) }}" method="post">
+                    <input type="date" class="form-control" id="date" name="date" required>
+                    <textarea class="form-control" id="description" name="description" placeholder="Popis události" required></textarea>
+                    <select class="form-control" id="type" name="type">
+                        <option value="Maintenance">Údržba</option>
+                        <option value="Accident">Nehoda</option>
+                        <option value="Upgrade">Vylepšení</option>
+                        <option value="Other">Jiné</option>
+                    </select>
+                    <input type="number" class="form-control" id="cost" name="cost" placeholder="Náklady (volitelné)">
+                    <button type="submit" the btn btn-primary">Přidat</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="viewHistoryModal" tabindex="-1" role="dialog" aria-labelledby="viewHistoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewHistoryModalLabel">Historie vozidla</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% if history %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Popis</th>
+                            <th>Typ</th>
+                            <th>Náklady</th>
+                            <th>Dokument</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entry in history %}
+                        <tr>
+                            <td>{{ entry['Date'] }}</td>
+                            <td>{{ entry['Description'] }}</td>
+                            <td>{{ entry['Type'] }}</td>
+                            <td>{{ entry['Cost'] | default('N/A') }}</td>
+                            <td>
+                                {% if entry['Document'] %}
+                                <a href="{{ url_for('static', filename='path/to/documents/' ~ entry['Document']) }}">Stáhnout</a>
+                                {% else %}
+                                Žádný dokument
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                <p>Žádná historie není dostupná.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+
+</body>
+</html>
