@@ -9,6 +9,7 @@ from DB.database_connection import DatabaseConnection
 from flask import send_file
 from flask import current_app
 from werkzeug.utils import secure_filename
+from .faq import faq_data
 
 import io
 
@@ -32,7 +33,7 @@ def home():
         db_connection.close()
     if not vehicles:
         current_app.logger.info("No vehicles found in database.")
-    return render_template('page.html', vehicles=vehicles)
+    return render_template('page.html', vehicles=vehicles, faq_data=faq_data)
 
 
 
@@ -58,6 +59,9 @@ def serve_image(vehicle_id):
 
 
 
+
+from flask import request, redirect, url_for, flash, session
+from werkzeug.utils import secure_filename
 
 @vehicles.route('/add-vehicle', methods=['POST'])
 def add_vehicle():
@@ -106,6 +110,7 @@ def add_vehicle():
             cursor.close()
             db_connection.close()
 
+        # Přesměrování na hlavní stránku vozidel bez jakéhokoliv argumentu
         return redirect(url_for('vehicles.home'))
 
 

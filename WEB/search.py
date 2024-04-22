@@ -2,6 +2,7 @@ from flask import request
 from flask import render_template
 from flask import current_app
 from DB.database_connection import DatabaseConnection
+from .faq import faq_data
 
 from flask import render_template
 from werkzeug.exceptions import BadRequest
@@ -73,7 +74,7 @@ def search_vehicles():
         cursor.close()
         db_connection.close()
 
-    return render_template('page.html', vehicles=vehicles)
+    return render_template('page.html', vehicles=vehicles, faq_data=faq_data)
 
 import unittest
 from unittest.mock import patch, MagicMock
