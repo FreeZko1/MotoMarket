@@ -80,10 +80,10 @@ def get_messages(sender_id, recipient_id):
         """
         cursor.execute(query, (sender_id, recipient_id, recipient_id, sender_id))
         messages = cursor.fetchall()
-        current_app.logger.info(f"Retrieved messages between users {sender_id} and {recipient_id}")
+        current_app.logger.info(f"Retrieved messages between Users {sender_id} and {recipient_id}")
         return jsonify(messages)
     except Exception as e:
-        current_app.logger.error(f"Error retrieving messages between users {sender_id} and {recipient_id}: {e}")
+        current_app.logger.error(f"Error retrieving messages between Users {sender_id} and {recipient_id}: {e}")
         return jsonify(success=False, message=str(e)), 500
     finally:
         cursor.close()
@@ -115,7 +115,7 @@ def chat_list():
 
 @chat.route('/api/chat-users/<int:user_id>', methods=['GET'])
 def get_chat_users(user_id):
-    current_app.logger.info(f"Retrieving chat users for user ID {user_id}")
+    current_app.logger.info(f"Retrieving chat Users for user ID {user_id}")
     db_connection = DatabaseConnection()  # Vytvoření instance
     db = db_connection.connect()  # Připojení k databázi
     try:
@@ -128,10 +128,10 @@ def get_chat_users(user_id):
         """
         cursor.execute(query, (user_id, user_id, user_id))
         users = cursor.fetchall()
-        current_app.logger.info(f"Found {len(users)} users associated with user ID {user_id}")
+        current_app.logger.info(f"Found {len(users)} Users associated with user ID {user_id}")
         return jsonify(users)
     except Exception as e:
-        current_app.logger.error(f"Error retrieving chat users for user ID {user_id}: {e}")
+        current_app.logger.error(f"Error retrieving chat Users for user ID {user_id}: {e}")
         return jsonify(success=False, message=str(e)), 500
     finally:
         cursor.close()

@@ -30,7 +30,7 @@ def login():
 
         db_connection = DatabaseConnection().connect()
         cursor = db_connection.cursor(dictionary=True)
-        cursor.execute('SELECT * FROM users WHERE email = %s', (email,))
+        cursor.execute('SELECT * FROM Users WHERE email = %s', (email,))
         user = cursor.fetchone()
 
         if user and user['Password'] == password:
@@ -77,7 +77,7 @@ def register():
             valid = False
             current_app.logger.warning(f"Invalid email format provided: {email}")
 
-        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
+        cursor.execute('SELECT * FROM Users WHERE username = %s', (username,))
         if cursor.fetchone():
             flash('Uživatelské jméno je již používáno.', 'danger')
             valid = False
@@ -93,7 +93,7 @@ def register():
             valid = False
             current_app.logger.warning(f"Invalid phone format provided: {phone}")
         else:
-            cursor.execute('SELECT * FROM users WHERE PhoneNumber = %s', (phone,))
+            cursor.execute('SELECT * FROM Users WHERE PhoneNumber = %s', (phone,))
             if cursor.fetchone():
                 flash('Telefonní číslo je již používáno.', 'danger')
                 valid = False
@@ -106,7 +106,7 @@ def register():
 
         if valid:
             try:
-                cursor.execute('''INSERT INTO users (username, FirstName, LastName, Email, Password, PhoneNumber, Role) 
+                cursor.execute('''INSERT INTO Users (username, FirstName, LastName, Email, Password, PhoneNumber, Role) 
                                   VALUES (%s, %s, %s, %s, %s, %s, 'User')''', 
                                (username, firstName, lastName, email, password, phone))
                 db_connection.commit()
