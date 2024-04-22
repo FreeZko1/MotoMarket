@@ -22,4 +22,4 @@ app.logger.addHandler(handler)
 
 if __name__ == '__main__':
     app.logger.info("unguje")
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=80)
