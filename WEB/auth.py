@@ -42,7 +42,7 @@ def login():
             flash('Invalid login credentials.', 'danger')
             current_app.logger.warning(f"Login failed for {email}")
 
-    return render_template("login.html")
+    return render_template("login.html", faq_data)
 
 
 
