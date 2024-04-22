@@ -2,17 +2,10 @@ from flask import Flask
 from DB.database_connection import DatabaseConnection
 from flask import Flask
 from DB.database_connection import DatabaseConnection
-from .auth import auth
-from .vehicles import vehicles as vehicles_blueprint
-from .user_profiles import user_profiles
-from .news import news as news_blueprint
-from .compare_vehicles import compare as compare_blueprint
-from .chat import chat as chat_blueprint
-from .quiz import quiz_blueprint
-from .adminfeatures import admin
 
 
 def create_app():
+    # Vytvoření nové instance webové aplikace.
     app = Flask(__name__, static_folder='static')
 
     app.config['SECRET_KEY'] = "honza"
@@ -23,6 +16,8 @@ def create_app():
 
     app.db_connection = database_connection.connect()
 
+
+    #Import a registrace modulů
     from .auth import auth
     app.register_blueprint(auth, url_prefix="/")
 
@@ -47,7 +42,12 @@ def create_app():
     from .adminfeatures import admin
     app.register_blueprint(admin, url_prefix='/admin')
 
-   
+    from .faq import faq
+    app.register_blueprint(faq)
+
+    from .ads import ads_bp
+    app.register_blueprint(ads_bp)
+
 
     return app
 

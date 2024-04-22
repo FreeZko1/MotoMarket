@@ -1,10 +1,11 @@
+
 import unittest
 from unittest.mock import patch, MagicMock
 from flask import Flask
 from flask import session
 
 # Import your auth blueprint
-from auth import auth
+from .auth import auth
 
 class AuthTestCase(unittest.TestCase):
     def setUp(self):

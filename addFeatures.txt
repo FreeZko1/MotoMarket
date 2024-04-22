@@ -106,3 +106,11 @@ const carTypesQuestions = [
 
 
 
+
+Zabezpečení: Zlepšení zabezpečení aplikace, implementace vícefaktorové autentizace nebo šifrování dat.
+
+Moduly pro reporty: Rozvoj modulů pro generování a export reportů ve formátech jako PDF nebo Excel.
+
+Customizace uživatelského rozhraní: Umožnění uživatelům přizpůsobit si rozhraní podle svých preferencí.
+
+Reklamní systém: Vytvoření systému pro správu a zobrazování reklam v aplikaci.

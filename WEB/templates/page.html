@@ -6,6 +6,8 @@
     <title>MotoMarket</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
+
+        
         .navbar-custom {
             background-color: #007bff; /* Modrá barva navbaru */
         }
@@ -49,6 +51,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('quiz.quiz_home') }}">Dej si kvíz!</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#faqModal">FAQ</a>
+                </li>                
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('auth.logout') }}">Odhlásit se</a>
@@ -58,42 +63,8 @@
     </div>
 </nav>
 
-<!--
-<div class="modal fade" id="vehicleAdviceModal" tabindex="-1" role="dialog" aria-labelledby="vehicleAdviceModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="vehicleAdviceModalLabel">Poradce pro výběr vozidla</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                 Form with dynamic rendering of Flask-WTF fields 
-                <form action="{{ url_for('vehicle_advisor.vehicle') }}" method="post">
-                    {{ form.hidden_tag() }}
-                    {% for field in form %}
-                        <div class="form-group">
-                            {{ field.label(class="form-control-label") }}
-                            {{ field(class="form-control") }}
-                            {% if field.errors %}
-                                <div class="alert alert-danger" role="alert">
-                                    {% for error in field.errors %}
-                                        <p>{{ error }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Doporučit vozidlo</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
--->
+
+  
   
 <div class="modal fade" id="newsModal" tabindex="-1" role="dialog" aria-labelledby="newsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -135,6 +106,28 @@
                 </div>
             </div>
             
+        </div>
+    </div>
+</div>
+
+<!-- Modální okno FAQ -->
+<div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="faqModalLabel">Často kladené otázky</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% for question, answer in faq_data.items() %}
+                    <div class="faq-item">
+                        <h4>{{ question }}</h4>
+                        <p>{{ answer }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
@@ -258,6 +251,14 @@
         </div>
     </div>
 </div>
+
+<div class="container mt-3">
+    <h4>Naše reklamy</h4>
+    <div id="ads-container" class="row">
+        <!-- Reklamy budou vloženy sem -->
+    </div>
+</div>
+
 <div class="container mt-3">
     <div class="row">
         <div class="col-12">

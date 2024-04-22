@@ -3,9 +3,10 @@ from DB.database_connection import DatabaseConnection
 
 admin = Blueprint('admin', __name__, url_prefix='/admin')
 
+# Funkce pro smazání uživatele systémem administrátora.
 @admin.route('/delete-user/<int:user_id>', methods=['POST'])
 def delete_user(user_id):
-    admin_id = session.get('user_id', 'Unknown')  # Případ, že ID není dostupné
+    admin_id = session.get('user_id', 'Unknown')
     if session.get('role') == 'admin':
         current_app.logger.info(f"Admin {admin_id} attempting to delete user {user_id}")
         db_connection = DatabaseConnection().connect()
@@ -28,6 +29,7 @@ def delete_user(user_id):
         current_app.logger.warning(f"User {admin_id} unauthorized attempt to delete user {user_id}")
         return redirect(url_for('auth.login_view'))
 
+# Funkce pro smazání vozidla administrátorem.
 @admin.route('/delete-vehicle/<int:vehicle_id>', methods=['POST'], endpoint='admin_delete_vehicle')
 def delete_vehicle_admin(vehicle_id):
     admin_id = session.get('user_id', 'Unknown')
@@ -54,13 +56,13 @@ def delete_vehicle_admin(vehicle_id):
         return redirect(url_for('auth.login_view'))
 
 
-# Testy pro adminfeatures.py
 import unittest
 from unittest.mock import patch, MagicMock
 from flask import Flask
 from flask_testing import TestCase
 
 class TestAdminFeatures(TestCase):
+    
     def create_app(self):
         app = Flask(__name__)
         app.config['TESTING'] = True
@@ -68,6 +70,7 @@ class TestAdminFeatures(TestCase):
         app.register_blueprint(admin)
         return app
 
+    # Mocking databázového spojení pro testy.
     def setUp(self):
         self.db_patch = patch('DB.database_connection.DatabaseConnection')
         self.mock_db_connection = self.db_patch.start()
@@ -76,6 +79,8 @@ class TestAdminFeatures(TestCase):
         self.mock_db_connection().connect.return_value = self.mock_db
         self.mock_db.cursor.return_value = self.mock_cursor
 
+
+    # Ukončení mockingu po každém testu.
     def tearDown(self):
         self.db_patch.stop()
 

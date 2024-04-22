@@ -224,46 +224,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     options: ["Maria Teresa de Filippis", "Lella Lombardi", "Divina Galica", "Desiré Wilson"],
                     answer: 1
                 },
-                {
-                    question: "Jaký motoristický závod se koná každoročně na ostrově Man?",
-                    options: ["Manx Grand Prix", "Isle of Man TT", "Man Rally", "Isle of Man Race"],
-                    answer: 1
-                },
-                {
-                    question: "Kdo je známý jako 'Král Rally'?",
-                    options: ["Sebastien Loeb", "Colin McRae", "Carlos Sainz", "Walter Röhrl"],
-                    answer: 0
-                },
-                {
-                    question: "Který jezdec vyhrál titul ve Formuli 1 ve své debutové sezóně?",
-                    options: ["Lewis Hamilton", "Jacques Villeneuve", "Juan Manuel Fangio", "Nico Rosberg"],
-                    answer: 1
-                },
-                {
-                    question: "Kterému závodníkovi se přezdívá 'Profesor'?",
-                    options: ["Alain Prost", "Ayrton Senna", "Michael Schumacher", "Niki Lauda"],
-                    answer: 0
-                },
-                {
-                    question: "Který rok získal Michael Schumacher svůj první titul ve Formuli 1?",
-                    options: ["1994", "1995", "1996", "1997"],
-                    answer: 0
-                },
-                {
-                    question: "Která automobilka dosáhla prvního vítězství ve Formuli 1 s hybridním motorem?",
-                    options: ["Mercedes", "Ferrari", "Red Bull", "McLaren"],
-                    answer: 0
-                },
-                {
-                    question: "Který závodník vyhrál nejvíce závodů ve Formuli 1 bez zisku mistrovského titulu?",
-                    options: ["Stirling Moss", "David Coulthard", "Rubens Barrichello", "Felipe Massa"],
-                    answer: 0
-                },
-                {
-                    question: "Který závodní okruh hostil první noční závod ve Formuli 1?",
-                    options: ["Marina Bay Street Circuit", "Bahrain International Circuit", "Yas Marina Circuit", "Suzuka Circuit"],
-                    answer: 0
-                }
             ]
         }
     ];
@@ -299,7 +259,6 @@ document.addEventListener('DOMContentLoaded', function() {
         showQuestion(currentQuestionIndex);
         $('#quizModal').modal('show');
     }
-
     function showQuestion(questionIndex) {
         const question = currentQuiz.questions[questionIndex];
         const quizContainer = document.getElementById('quiz-container');
@@ -325,14 +284,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('finish-btn').style.display = 'inline-block';
         document.getElementById('finish-btn').onclick = endQuiz;  // Ujistěte se, že funkce endQuiz je správně přiřazená.
     }
-
     function endQuiz() {
         // Zkontrolujte, jestli byla vybrána odpověď v poslední otázce
         const selectedOption = document.querySelector('input[name="option"]:checked');
         if (selectedOption && parseInt(selectedOption.value) === currentQuiz.questions[currentQuestionIndex].answer) {
             score++;
         }
-
         const quizContainer = document.getElementById('quiz-container');
         quizContainer.innerHTML = `<h4>Váš výsledek: ${score} z ${currentQuiz.questions.length}</h4>`;
         document.getElementById('next-btn').style.display = 'none';
@@ -341,6 +298,5 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#quizModal').modal('hide');
         }, 2000);
     }
-
-    generateQuizCards();  // Generuje karty kvízů při načtení stránky
+    generateQuizCards();  
 });

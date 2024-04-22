@@ -43,3 +43,35 @@ function selectVehicle(vehicleId) {
         alert('Toto vozidlo je již vybráno.');
     }
 }
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('ads')  // Změňte podle potřeby na správný URL endpoint
+        .then(response => response.json())
+        .then(data => {
+            const adsContainer = document.getElementById('ads-container');
+            if (data && data.length > 0) {
+                data.forEach(ad => {
+                    const adElement = document.createElement('div');
+                    adElement.className = 'col-md-4';
+                    adElement.innerHTML = `
+                        <div class="card mb-3">
+                            <img src="${ad.image_url}" class="card-img-top" alt="${ad.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${ad.title}</h5>
+                                <p class="card-text"><a href="${ad.target_url}" target="_blank">Více informací</a></p>
+                            </div>
+                        </div>
+                    `;
+                    adsContainer.appendChild(adElement);
+                });
+            } else {
+                adsContainer.innerHTML = '<div class="col-12"><p>Žádné reklamy k zobrazení.</p></div>';
+            }
+        })
+        .catch(error => {
+            console.error('Chyba při načítání reklam:', error);
+            const adsContainer = document.getElementById('ads-container');
+            adsContainer.innerHTML = '<div class="col-12"><p>Nelze načíst reklamy.</p></div>';
+        });
+});

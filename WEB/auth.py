@@ -9,6 +9,7 @@ from DB.database_connection import DatabaseConnection
 import re
 from .news import get_news
 from flask import current_app
+from .faq import faq_data  # Přizpůsobte cestu importu podle struktury vašeho projektu
 
 auth = Blueprint("auth", __name__)
 
@@ -154,7 +155,7 @@ def page():
             db_connection.close()
 
     # Předání dat do šablony
-    return render_template("page.html", vehicles=vehicles, news_items=news_items)
+    return render_template("page.html", vehicles=vehicles, news_items=news_items, faq_data=faq_data)
 
 @auth.route('/edit-profile', methods=['POST'])
 def edit_profile():
