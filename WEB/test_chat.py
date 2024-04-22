@@ -1,7 +1,13 @@
 import unittest
 from unittest.mock import patch, MagicMock
 from flask import Flask, template_rendered, session
-from chat import chat
+import sys
+import os
+
+# Assuming your vehicles module is named vehicles_module.py
+sys.path.append(os.path.join(os.path.dirname(__file__),".."))
+
+from WEB.chat import chat
 
 class ChatTestCase(unittest.TestCase):
     def setUp(self):

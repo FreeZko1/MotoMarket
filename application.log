@@ -1,126 +1,66 @@
-2024-04-22 10:53:12,782 - WEB - INFO - unguje
-2024-04-22 10:53:13,363 - WEB - INFO - unguje
-2024-04-22 10:53:16,343 - WEB - INFO - Accessing the login page
-2024-04-22 10:53:21,714 - WEB - INFO - Attempt to login with email: jan.novak@example.com
-2024-04-22 10:53:21,838 - WEB - INFO - User jan.novak@example.com logged in successfully
-2024-04-22 10:53:21,852 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 10:53:22,025 - WEB - INFO - Loaded 15 vehicles from the database
-2024-04-22 10:53:22,152 - WEB - INFO - Loaded news items
-2024-04-22 10:53:23,628 - WEB - INFO - Fetched all active ads
-2024-04-22 11:11:55,719 - WEB - INFO - Profile data retrieved for user ID 1
-2024-04-22 11:11:55,727 - WEB - INFO - User reviews loaded for user ID 1
-2024-04-22 11:12:01,678 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:12:01,833 - WEB - INFO - Loaded 15 vehicles from the database
-2024-04-22 11:12:01,956 - WEB - INFO - Loaded news items
-2024-04-22 11:12:03,275 - WEB - INFO - Fetched all active ads
-2024-04-22 11:12:09,801 - WEB - INFO - Searching vehicles with parameters: {'brand': 'VolksWagen', 'model': None, 'year_min': None, 'year_max': None, 'price_min': None, 'price_max': None, 'mileage_min': None, 'mileage_max': None}
-2024-04-22 11:12:09,932 - WEB - INFO - Executing query: SELECT * FROM Vehicles WHERE 1=1 AND brand LIKE %s with values: ['%VolksWagen%']
-2024-04-22 11:12:09,940 - WEB - INFO - Found 3 vehicles matching criteria.
-2024-04-22 11:25:46,604 - WEB - INFO - unguje
-2024-04-22 11:25:47,117 - WEB - INFO - unguje
-2024-04-22 11:25:48,849 - WEB - INFO - Accessing the login page
-2024-04-22 11:25:54,067 - WEB - INFO - Attempt to login with email: jan.novak@example.com
-2024-04-22 11:25:54,188 - WEB - INFO - User jan.novak@example.com logged in successfully
-2024-04-22 11:25:54,194 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:25:54,349 - WEB - INFO - Loaded 15 vehicles from the database
-2024-04-22 11:25:54,475 - WEB - INFO - Loaded news items
-2024-04-22 11:25:56,214 - WEB - INFO - Fetched all active ads
-2024-04-22 11:27:02,381 - WEB - INFO - Searching vehicles with parameters: {'brand': 'VolksWagen', 'model': None, 'year_min': None, 'year_max': None, 'price_min': None, 'price_max': None, 'mileage_min': None, 'mileage_max': None}
-2024-04-22 11:27:02,502 - WEB - INFO - Executing query: SELECT * FROM Vehicles WHERE 1=1 AND brand LIKE %s with values: ['%VolksWagen%']
-2024-04-22 11:27:02,508 - WEB - INFO - Found 3 vehicles matching criteria.
-2024-04-22 11:31:27,481 - WEB - INFO - unguje
-2024-04-22 11:32:05,899 - WEB - INFO - unguje
-2024-04-22 11:32:06,444 - WEB - INFO - unguje
-2024-04-22 11:32:06,538 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:32:06,599 - WEB - INFO - Loaded 15 vehicles from the database
-2024-04-22 11:32:06,645 - WEB - INFO - Loaded news items
-2024-04-22 11:32:07,235 - WEB - INFO - Fetched all active ads
-2024-04-22 11:32:13,233 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:32:13,370 - WEB - INFO - Loaded 15 vehicles from the database
-2024-04-22 11:32:13,489 - WEB - INFO - Loaded news items
-2024-04-22 11:32:14,719 - WEB - INFO - Fetched all active ads
-2024-04-22 11:32:20,997 - WEB - INFO - Searching vehicles with parameters: {'brand': 'sss', 'model': None, 'year_min': None, 'year_max': None, 'price_min': None, 'price_max': None, 'mileage_min': None, 'mileage_max': None}
-2024-04-22 11:32:21,115 - WEB - INFO - Executing query: SELECT * FROM Vehicles WHERE 1=1 AND brand LIKE %s with values: ['%sss%']
-2024-04-22 11:32:21,123 - WEB - INFO - Found 4 vehicles matching criteria.
-2024-04-22 11:32:21,763 - WEB - INFO - Fetched all active ads
-2024-04-22 11:34:51,394 - WEB - INFO - Vehicle 16 deleted by user 1
-2024-04-22 11:34:51,580 - WEB - INFO - Vehicle home page accessed successfully.
-2024-04-22 11:40:28,006 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:40:28,173 - WEB - INFO - Loaded 14 vehicles from the database
-2024-04-22 11:40:28,307 - WEB - INFO - Loaded news items
-2024-04-22 11:40:30,040 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:40:30,190 - WEB - INFO - Loaded 14 vehicles from the database
-2024-04-22 11:40:30,313 - WEB - INFO - Loaded news items
-2024-04-22 11:40:31,603 - WEB - INFO - Fetched all active ads
-2024-04-22 11:40:34,921 - WEB - INFO - Profile data retrieved for user ID 1
-2024-04-22 11:40:34,925 - WEB - INFO - User reviews loaded for user ID 1
-2024-04-22 11:40:36,349 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:40:36,492 - WEB - INFO - Loaded 14 vehicles from the database
-2024-04-22 11:40:36,609 - WEB - INFO - Loaded news items
-2024-04-22 11:40:37,838 - WEB - INFO - Fetched all active ads
-2024-04-22 11:40:40,176 - WEB - INFO - Retrieving chat users for user ID 1
-2024-04-22 11:40:40,319 - WEB - INFO - Found 2 users associated with user ID 1
-2024-04-22 11:41:00,965 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:41:01,107 - WEB - INFO - Loaded 14 vehicles from the database
-2024-04-22 11:41:01,233 - WEB - INFO - Loaded news items
-2024-04-22 11:41:02,455 - WEB - INFO - Fetched all active ads
-2024-04-22 11:41:17,306 - WEB - WARNING - metoda get vehicles se spustilaaaaa
-2024-04-22 11:41:18,993 - WEB - WARNING - metoda get vehicles se spustila
-2024-04-22 11:41:22,945 - WEB - WARNING - session: <SecureCookieSession {'_flashes': [('success', 'Inzerát byl úspìšnì smazán.')], 'role': 'User', 'selected_vehicles': ['7', '15'], 'user_id': 1}>
-2024-04-22 11:41:26,640 - WEB - WARNING - session: <SecureCookieSession {'_flashes': [('success', 'Inzerát byl úspìšnì smazán.')], 'role': 'User', 'selected_vehicles': ['7', '18'], 'user_id': 1}>
-2024-04-22 11:41:29,603 - WEB - WARNING - compare selected vehicles se volá
-2024-04-22 11:41:29,603 - WEB - WARNING - aaaa['7']
-2024-04-22 11:41:29,763 - WEB - WARNING - {'VehicleID': 7, 'Brand': 'VolksWagen', 'Model': 'Golf', 'YearOfManufacture': 2000, 'Mileage': 160000, 'Price': Decimal('45000.00'), 'UserID': None, 'Description': None} , [{'VehicleID': 7, 'Brand': 'VolksWagen', 'Model': 'Golf', 'YearOfManufacture': 2000, 'Mileage': 160000, 'Price': Decimal('45000.00'), 'UserID': None, 'Description': None}]
-2024-04-22 11:41:34,503 - WEB - INFO - User 1 accessing chat page with user 1
-2024-04-22 11:41:34,593 - WEB - INFO - Retrieving chat users for user ID 1
-2024-04-22 11:41:34,723 - WEB - INFO - Found 2 users associated with user ID 1
-2024-04-22 11:41:34,865 - WEB - INFO - Retrieved messages between users 1 and 2
-2024-04-22 11:41:36,886 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:41:37,036 - WEB - INFO - Loaded 14 vehicles from the database
-2024-04-22 11:41:37,153 - WEB - INFO - Loaded news items
-2024-04-22 11:41:38,194 - WEB - INFO - Fetched all active ads
-2024-04-22 11:41:43,842 - WEB - WARNING - metoda get vehicles se spustilaaaaa
-2024-04-22 11:42:24,825 - WEB - INFO - Vehicle home page accessed successfully.
-2024-04-22 11:44:30,707 - WEB - INFO - unguje
-2024-04-22 11:44:31,261 - WEB - INFO - unguje
-2024-04-22 11:44:34,560 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:44:34,625 - WEB - INFO - Loaded 15 vehicles from the database
-2024-04-22 11:44:34,671 - WEB - INFO - Loaded news items
-2024-04-22 11:44:35,482 - WEB - INFO - Fetched all active ads
-2024-04-22 11:49:17,375 - WEB - INFO - unguje
-2024-04-22 11:49:23,761 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:49:23,901 - WEB - INFO - Loaded 16 vehicles from the database
-2024-04-22 11:49:24,024 - WEB - INFO - Loaded news items
-2024-04-22 11:49:25,704 - WEB - INFO - Fetched all active ads
-2024-04-22 11:49:55,083 - WEB - INFO - Vehicle home page accessed successfully.
-2024-04-22 11:50:53,391 - WEB - INFO - unguje
-2024-04-22 11:50:56,196 - WEB - INFO - unguje
-2024-04-22 11:51:34,540 - WEB - INFO - unguje
-2024-04-22 11:51:35,029 - WEB - INFO - unguje
-2024-04-22 11:51:37,307 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:51:37,384 - WEB - INFO - Loaded 17 vehicles from the database
-2024-04-22 11:51:37,422 - WEB - INFO - Loaded news items
-2024-04-22 11:51:42,819 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:51:42,989 - WEB - INFO - Loaded 17 vehicles from the database
-2024-04-22 11:51:43,104 - WEB - INFO - Loaded news items
-2024-04-22 11:51:44,353 - WEB - INFO - Fetched all active ads
-2024-04-22 11:53:11,266 - WEB - INFO - unguje
-2024-04-22 11:53:11,737 - WEB - INFO - unguje
-2024-04-22 11:53:14,245 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:53:14,309 - WEB - INFO - Loaded 18 vehicles from the database
-2024-04-22 11:53:14,350 - WEB - INFO - Loaded news items
-2024-04-22 11:53:15,183 - WEB - INFO - Fetched all active ads
-2024-04-22 11:53:40,726 - WEB - INFO - Vehicle home page accessed successfully.
-2024-04-22 11:55:51,913 - WEB - INFO - unguje
-2024-04-22 11:55:52,380 - WEB - INFO - unguje
-2024-04-22 11:55:56,514 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:55:56,584 - WEB - INFO - Loaded 19 vehicles from the database
-2024-04-22 11:55:56,632 - WEB - INFO - Loaded news items
-2024-04-22 11:55:57,829 - WEB - INFO - Accessing the main page with vehicle and news data
-2024-04-22 11:55:57,996 - WEB - INFO - Loaded 19 vehicles from the database
-2024-04-22 11:55:58,115 - WEB - INFO - Loaded news items
-2024-04-22 11:55:59,888 - WEB - INFO - Fetched all active ads
-2024-04-22 11:56:22,492 - WEB - INFO - Vehicle home page accessed successfully.
-2024-04-22 11:56:23,749 - WEB - INFO - Fetched all active ads
-2024-04-22 12:01:29,260 - WEB - INFO - unguje
-2024-04-22 12:01:31,010 - WEB - INFO - unguje
+2024-04-22 12:18:35,979 - WEB - INFO - unguje
+2024-04-22 12:18:36,440 - WEB - INFO - unguje
+2024-04-22 13:01:29,336 - WEB - INFO - unguje
+2024-04-22 13:01:29,888 - WEB - INFO - unguje
+2024-04-22 13:01:32,891 - WEB - INFO - Accessing the main page with vehicle and news data
+2024-04-22 13:01:33,016 - WEB - INFO - Loaded 20 vehicles from the database
+2024-04-22 13:01:33,076 - WEB - INFO - Loaded news items
+2024-04-22 13:01:33,799 - WEB - INFO - Fetched all active ads
+2024-04-22 13:02:15,331 - WEB - INFO - Accessing the login page
+2024-04-22 13:02:53,536 - WEB - INFO - Vehicle home page accessed successfully.
+2024-04-22 13:02:54,824 - WEB - INFO - Fetched all active ads
+2024-04-22 13:03:02,651 - WEB - INFO - Retrieving chat users for user ID 1
+2024-04-22 13:03:02,786 - WEB - INFO - Found 2 users associated with user ID 1
+2024-04-22 13:03:35,774 - WEB - INFO - Retrieving chat users for user ID 1
+2024-04-22 13:03:35,890 - WEB - INFO - Found 2 users associated with user ID 1
+2024-04-22 13:03:58,776 - WEB - INFO - Message sent from user 1 to 8
+2024-04-22 13:03:58,903 - WEB - INFO - Retrieved messages between users 1 and 8
+2024-04-22 13:04:01,193 - WEB - INFO - Accessing the main page with vehicle and news data
+2024-04-22 13:04:01,395 - WEB - INFO - Loaded 21 vehicles from the database
+2024-04-22 13:04:01,533 - WEB - INFO - Loaded news items
+2024-04-22 13:04:02,737 - WEB - INFO - Fetched all active ads
+2024-04-22 13:04:03,046 - WEB - INFO - User 1 accessing chat page with user 1
+2024-04-22 13:04:03,343 - WEB - INFO - Retrieving chat users for user ID 1
+2024-04-22 13:04:03,477 - WEB - INFO - Found 3 users associated with user ID 1
+2024-04-22 13:04:03,621 - WEB - INFO - Retrieved messages between users 1 and 2
+2024-04-22 13:04:04,689 - WEB - INFO - Retrieved messages between users 1 and 8
+2024-04-22 13:04:15,555 - WEB - INFO - Accessing the main page with vehicle and news data
+2024-04-22 13:04:15,728 - WEB - INFO - Loaded 21 vehicles from the database
+2024-04-22 13:04:15,855 - WEB - INFO - Loaded news items
+2024-04-22 13:04:17,117 - WEB - INFO - Fetched all active ads
+2024-04-22 13:04:21,535 - WEB - INFO - Searching vehicles with parameters: {'brand': 'VolksWagen', 'model': None, 'year_min': None, 'year_max': None, 'price_min': None, 'price_max': None, 'mileage_min': None, 'mileage_max': None}
+2024-04-22 13:04:21,650 - WEB - INFO - Executing query: SELECT * FROM Vehicles WHERE 1=1 AND brand LIKE %s with values: ['%VolksWagen%']
+2024-04-22 13:04:21,654 - WEB - INFO - Found 4 vehicles matching criteria.
+2024-04-22 13:04:22,283 - WEB - INFO - Fetched all active ads
+2024-04-22 13:04:27,219 - WEB - INFO - Accessing the main page with vehicle and news data
+2024-04-22 13:04:27,390 - WEB - INFO - Loaded 21 vehicles from the database
+2024-04-22 13:04:27,506 - WEB - INFO - Loaded news items
+2024-04-22 13:04:28,748 - WEB - INFO - Fetched all active ads
+2024-04-22 13:04:37,008 - WEB - WARNING - metoda get vehicles se spustilaaaaa
+2024-04-22 13:04:38,844 - WEB - WARNING - metoda get vehicles se spustila
+2024-04-22 13:04:41,504 - WEB - WARNING - session: <SecureCookieSession {'_flashes': [('success', 'Vozidlo bylo úspìšnì pøidáno.'), ('success', 'Recenze byla úspìšnì pøidána.')], 'role': 'User', 'user_id': 1, 'selected_vehicles': ['7']}>
+2024-04-22 13:04:45,034 - WEB - WARNING - session: <SecureCookieSession {'_flashes': [('success', 'Vozidlo bylo úspìšnì pøidáno.'), ('success', 'Recenze byla úspìšnì pøidána.')], 'role': 'User', 'selected_vehicles': ['7', '14'], 'user_id': 1}>
+2024-04-22 13:04:49,015 - WEB - WARNING - compare selected vehicles se volá
+2024-04-22 13:04:49,015 - WEB - WARNING - aaaa['7']
+2024-04-22 13:04:49,137 - WEB - WARNING - {'VehicleID': 7, 'Brand': 'VolksWagen', 'Model': 'Golf', 'YearOfManufacture': 2000, 'Mileage': 160000, 'Price': Decimal('45000.00'), 'UserID': None, 'Description': None} , [{'VehicleID': 7, 'Brand': 'VolksWagen', 'Model': 'Golf', 'YearOfManufacture': 2000, 'Mileage': 160000, 'Price': Decimal('45000.00'), 'UserID': None, 'Description': None}]
+2024-04-22 13:04:52,207 - WEB - INFO - Accessing the main page with vehicle and news data
+2024-04-22 13:04:52,363 - WEB - INFO - Loaded 21 vehicles from the database
+2024-04-22 13:04:52,493 - WEB - INFO - Loaded news items
+2024-04-22 13:05:17,933 - WEB - INFO - Accessing the main page with vehicle and news data
+2024-04-22 13:05:18,095 - WEB - INFO - Loaded 21 vehicles from the database
+2024-04-22 13:05:18,243 - WEB - INFO - Loaded news items
+2024-04-22 13:05:19,484 - WEB - INFO - Fetched all active ads
+2024-04-22 13:05:26,629 - WEB - INFO - Profile data retrieved for user ID 1
+2024-04-22 13:05:26,633 - WEB - INFO - User reviews loaded for user ID 1
+2024-04-22 13:05:34,884 - WEB - INFO - User 1 is updating their profile
+2024-04-22 13:05:35,006 - WEB - INFO - Profile for user 1 was successfully updated
+2024-04-22 13:05:35,135 - WEB - INFO - Profile data retrieved for user ID 1
+2024-04-22 13:05:35,139 - WEB - INFO - User reviews loaded for user ID 1
+2024-04-22 13:05:42,316 - WEB - INFO - Accessing the main page with vehicle and news data
+2024-04-22 13:05:42,503 - WEB - INFO - Loaded 21 vehicles from the database
+2024-04-22 13:05:42,633 - WEB - INFO - Loaded news items
+2024-04-22 13:05:43,710 - WEB - INFO - Fetched all active ads
+2024-04-22 13:05:45,565 - WEB - INFO - User 1 accessing chat page with user 1
+2024-04-22 13:05:45,646 - WEB - INFO - Retrieving chat users for user ID 1
+2024-04-22 13:05:45,778 - WEB - INFO - Found 3 users associated with user ID 1
+2024-04-22 13:05:45,903 - WEB - INFO - Retrieved messages between users 1 and 2

@@ -3,9 +3,12 @@ import unittest
 from unittest.mock import patch, MagicMock
 from flask import Flask
 from flask import session
-
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__),".."))
 # Import your auth blueprint
-from .auth import auth
+from auth import auth
+
 
 class AuthTestCase(unittest.TestCase):
     def setUp(self):

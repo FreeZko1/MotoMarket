@@ -7,9 +7,9 @@ from flask import url_for
 from flask import session
 from DB.database_connection import DatabaseConnection
 import re
-from .news import get_news
+from WEB.news import get_news
 from flask import current_app
-from .faq import faq_data  # Přizpůsobte cestu importu podle struktury vašeho projektu
+from WEB.faq import faq_data  # Přizpůsobte cestu importu podle struktury vašeho projektu
 
 auth = Blueprint("auth", __name__)
 

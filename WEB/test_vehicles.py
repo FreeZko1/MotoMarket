@@ -2,10 +2,13 @@ import unittest
 from unittest.mock import patch, MagicMock
 from flask import Flask
 import io  # Import the io module
-
+import sys
+import os
 
 # Assuming your vehicles module is named vehicles_module.py
-from vehicles import vehicles
+sys.path.append(os.path.join(os.path.dirname(__file__),".."))
+
+from WEB.vehicles import vehicles
 
 class TestVehiclesBlueprint(unittest.TestCase):
     def setUp(self):
